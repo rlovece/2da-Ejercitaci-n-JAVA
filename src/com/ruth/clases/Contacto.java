@@ -9,15 +9,17 @@ public class Contacto {
     String correoElectronico;
 
     ///region Constructor
-  /*  public Contacto(int id, String nombre, String apellido, String telefono, String correoElectronico) {
+    public Contacto(int id, String nombre, String apellido, String telefono, String correoElectronico) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.correoElectronico = correoElectronico;
     }
+
+    public Contacto(){};
     ///endregion
-*/
+
     ///region Getters and Setters
     public int getId() {
         return id;

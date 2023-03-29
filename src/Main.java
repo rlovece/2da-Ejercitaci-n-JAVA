@@ -21,9 +21,7 @@ public class Main {
             case 4:
                 ejercicio4();
                 break;
-            case 5:
-                ejercicio5();
-                break;
+
         }
     }
 
@@ -36,8 +34,7 @@ public class Main {
         System.out.println("1)    Clase Cuenta Bancaria");
         System.out.println("2)    Clase Vuelo");
         System.out.println("3)    Clase Agenda");
-        System.out.println("4)    Clase Estudiante");
-        System.out.println("5)    Clase Producto");
+        System.out.println("4)    Clase Producto");
         System.out.println("Ingrese el número que desee ejecutar: ");
 
         nro = scan.nextInt();
@@ -60,30 +57,31 @@ public class Main {
 
         Agenda miAgenda = new Agenda();
 
-        miAgenda.cargarAgenda();
-        miAgenda.cargarAgenda();
+        Contacto c1 = new Contacto(001,"Ruth", "Lovece", "2291457449", "ruti@gmail.com" );
+        Contacto c2 = new Contacto(002,"Belen", "Lovece", "5514287", "bel@gmail.com" );
+        Contacto c3 = new Contacto(002,"Nahuel", "Perez", "2942153", "nahuel@gmail.com" );
+        Contacto c4 = new Contacto(002,"Bruno", "Martin", "9542887", "bru@gmail.com" );
 
+        miAgenda.agregarContacto2(c1);
+        miAgenda.agregarContacto2(c2);
+        miAgenda.agregarContacto2(c3);
+        miAgenda.agregarContacto2(c4);
+
+        System.out.println("La agenda actual!! ");
+        System.out.println(miAgenda.toString());
+
+        miAgenda.eliminarContacto("Nahuel");
+        System.out.println("La agenda habiendo elimando a Nahuel");
         System.out.println(miAgenda.toString());
 
         miAgenda.modificarContactoDeAgenda();
-
+        System.out.println("La agenda habiendo modificado un Contacto");
         System.out.println(miAgenda.toString());
     }
     ///endregion
 
-    ///region Pruebas Clase Estudiante
+       ///region Pruebas Clase Producto
     static void ejercicio4 () {
-
-        GestorEstudiantes misEstudiantes = new GestorEstudiantes();
-
-        misEstudiantes.cargarNuevoEstudiante();
-
-        System.out.println(misEstudiantes.toString());
-    }
-    ///endregion
-
-    ///region Pruebas Clase Estudiante
-    static void ejercicio5 () {
 
         GestionProductos misProductos = new GestionProductos();
 

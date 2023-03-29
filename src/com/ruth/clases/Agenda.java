@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public class Agenda {
     ArrayList<Contacto> agenda = new ArrayList(); /// arreglo dinámico
 
-    public void cargarAgenda(){
+    public void agregarContacto(){
 
         Contacto newContacto = new Contacto();
         Scanner scan = new Scanner(System.in); /// abro scaner
@@ -28,6 +28,11 @@ public class Agenda {
 
         /// scan.close(); lo comenté porq sino me tira error al cargar un 2do contacto!
         this.agenda.add(newContacto);
+    }
+
+    ///Solo para hardcodear datos en main
+    public void agregarContacto2 (Contacto nuevoC){
+        this.agenda.add(nuevoC);
     }
 
     /// busca un contacto en la Agenda o lista de contactos. Sólo me dice si está o no.
@@ -83,6 +88,7 @@ public class Agenda {
     static int menuModificarContacto () throws InterruptedException {
         int opcion =0;
         Scanner scan = new Scanner(System.in);  // Le indicamos que va a recibir datos por consola;
+        scan.nextLine();
         boolean entradaValida = false;
 
         do {
@@ -116,10 +122,27 @@ public class Agenda {
         modificarContacto(aModificar);
     }
 
+    public void eliminarContacto (String nombre){
+
+        for(Contacto contacto : this.agenda){
+
+            if (contacto.getNombre().equalsIgnoreCase(nombre)){
+
+                this.agenda.remove(contacto);
+            }
+        }
+    }
+
     @Override
     public String toString() {
-        return "Agenda{" +
-                "agenda =" + agenda +
-                '}';
+        for (Contacto iContacto: this.agenda
+             ) {
+            System.out.println(iContacto.toString());
+        }
+        return null;
     }
+
+
+
+
 }
